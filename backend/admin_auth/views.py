@@ -84,7 +84,7 @@ def login(request):
     except Exception as e:
         logger.error("Unexpected error occurred: %s", e)
         return Response(
-            {"msg": f"An unexpected error occurred. {e}"},
+            {"msg": "An unexpected error occurred."},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR,
         )
 
