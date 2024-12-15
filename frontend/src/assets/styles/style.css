@@ -1,0 +1,9 @@
+.maxMainContainer {
+    width: 100%;
+}
+
+.maxSubContainer {
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}

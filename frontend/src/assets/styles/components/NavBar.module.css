@@ -1,0 +1,320 @@
+.nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 0px 20px;
+    transition: ease all 0.2s;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 0px 2px 1px rgba(201, 201, 201, 0.451);
+    animation: from-up 0.2s forwards;
+}
+
+@keyframes from-up {
+    0% {
+        top: -70px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+.nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #141316;
+}
+
+.nav > section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav > section:nth-child(1) button {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background-color: #f7f6f8;
+    transition: 0.2s ease all;
+    z-index: 10;
+}
+
+.nav > section:nth-child(1) button span {
+    position: absolute;
+    background-color: black;
+    width: 22px;
+    height: 2px;
+    transition: 0.2s ease all;
+    left: 14px;
+    top: 20px;
+}
+
+.nav > section:nth-child(1) button span:nth-child(2) {
+    width: 18px;
+    top: 30px;
+}
+
+.nav > section:nth-child(1) button.active {
+    background-color: #000000;
+}
+
+.nav > section:nth-child(1) button.active span {
+    background-color: white;
+    width: 22px;
+}
+
+.nav > section:nth-child(1) button.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav > section:nth-child(1) button.active span:nth-child(2) {
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.nav > section:nth-child(2) {
+    flex: 1;
+}
+
+.menu {
+    z-index: 9;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #141316;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 70px;
+}
+
+.menu > section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.menu > section:nth-child(1) {
+    gap: 20px;
+    flex: 1;
+}
+
+.menu > section:nth-child(1) a {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menu > section:nth-child(1) a span {
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 2px;
+    color: #ffffffb7;
+    font-weight: 500;
+    transition: all ease 0.4s;
+    font-size: 13px;
+}
+
+.menu > section:nth-child(1) a p {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    font-size: 50px;
+    font-weight: 900;
+    transition: all ease 0.4s;
+    opacity: 1;
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.menu > section:nth-child(1) a p:nth-child(2) {
+    top: 60px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.46);
+    opacity: 0;
+}
+
+.menu > section:nth-child(1) a:hover p:nth-child(1) {
+    opacity: 0;
+    top: -60px;
+}
+
+.menu > section:nth-child(1) a:hover p:nth-child(2) {
+    opacity: 1;
+    top: 0;
+}
+
+.menu > section:nth-child(1) a:hover span {
+    opacity: 0;
+    left: 50px;
+}
+
+.menu > section:nth-child(2) {
+    align-items: flex-end;
+}
+
+.menu > section:nth-child(2) > section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.menu > section:nth-child(2) section h4 {
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: white;
+}
+
+.menu > section:nth-child(2) section p {
+    letter-spacing: 1px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: rgba(255, 255, 255, 0.463);
+}
+
+.menu > section:nth-child(2) section p a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav section:nth-child(3) button {
+    position: relative;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: inset 2px 2px 2px 2px rgba(54, 54, 54, 0.2);
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all ease 0.2s;
+    border: 1px solid rgb(237, 237, 237);
+}
+
+.nav section:nth-child(3) button div {
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    padding: 18px 18px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 2px 1px rgba(46, 46, 46, 0.275);
+    transition: all ease 0.2s;
+    overflow: hidden;
+}
+
+.nav section:nth-child(3) button div i {
+    font-size: 13px;
+    position: absolute;
+    transition: all ease 0.2s;
+}
+
+.nav section:nth-child(3) button i:nth-of-type(1) {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 11px;
+}
+
+.nav section:nth-child(3) button i:nth-of-type(2) {
+    top: 110%;
+    left: 10px;
+}
+
+.nav section:nth-child(3) button i:nth-of-type(3) {
+    top: 220%;
+    left: 13px;
+}
+
+.nav section:nth-child(3) button.middle {
+}
+
+.nav section:nth-child(3) button.middle div {
+    left: 29%;
+}
+
+.nav section:nth-child(3) button.middle i:nth-of-type(1) {
+    top: -110%;
+}
+.nav section:nth-child(3) button.middle i:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.nav section:nth-child(3) button.middle i:nth-of-type(3) {
+    top: 110%;
+}
+
+.nav section:nth-child(3) button.end {
+}
+
+.nav section:nth-child(3) button.end div {
+    left: 52%;
+}
+
+.nav section:nth-child(3) button.end i:nth-of-type(1) {
+    top: -220%;
+}
+.nav section:nth-child(3) button.end i:nth-of-type(2) {
+    top: -110%;
+}
+.nav section:nth-child(3) button.end i:nth-of-type(3) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 564px) {
+    .menu > section:nth-of-type(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 901px) {
+    .menu {
+        padding: 0;
+    }
+
+    .menu > section:nth-child(1) {
+        margin-left: 20px;
+        gap: 50px;
+    }
+
+    .menu > section:nth-child(1) a {
+        height: 5vw;
+    }
+
+    .menu > section:nth-child(1) a p {
+        font-size: 5vw;
+    }
+}
