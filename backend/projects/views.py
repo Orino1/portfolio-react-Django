@@ -16,7 +16,6 @@ logger = logging.getLogger("app_logger")
 
 # get all prjects
 @api_view(["GET", "POST"])
-@access_token_required
 def get_or_post_project(request):
     if request.method == "POST":
         return create_project(request)
@@ -46,7 +45,7 @@ def get_projects(request):
 
 # create a project
 
-
+@access_token_required
 def create_project(request):
     try:
         serializer = CreateProjectSerializer(data=request.data)
