@@ -84,10 +84,6 @@ class ProjectSerializer(serializers.ModelSerializer):
 # Serializers
 
 
-class CreateAssociatedTechSerializer(serializers.Serializer):
-    id = serializers.IntegerField(min_value=1, required=True)
-
-
 class CreateAssociatedLanguageSerializer(serializers.Serializer):
     id = serializers.IntegerField(min_value=1, required=True)
     orms = serializers.ListField(
@@ -111,8 +107,8 @@ class CreateProjectVariantSerializer(serializers.Serializer):
     languages = serializers.ListSerializer(
         child=CreateAssociatedLanguageSerializer(), required=True, allow_empty=False
     )
-    technologies = serializers.ListSerializer(
-        child=CreateAssociatedTechSerializer(), required=False, allow_empty=True
+    technologies = serializers.ListField(
+        child=serializers.IntegerField(min_value=1), required=False, allow_empty=True
     )
 
 

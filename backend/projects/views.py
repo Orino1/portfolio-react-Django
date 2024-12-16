@@ -72,8 +72,8 @@ def create_project(request):
                 )
 
                 technologies_data = variant_data["technologies"]
-                for technology_data in technologies_data:
-                    technology = Technology.objects.get(id=technology_data["id"])
+                for technology_id in technologies_data:
+                    technology = Technology.objects.get(id=technology_id)
                     AssociatedTech.objects.create(
                         project_variant=new_project_variant, technology=technology
                     ).save()
