@@ -1,5 +1,5 @@
 import logging
-
+import os
 from django.contrib.auth.hashers import check_password, make_password
 from django.db import DatabaseError
 from rest_framework import status
@@ -52,7 +52,7 @@ def login(request):
             "refresh",
             str(refresh),
             httponly=True,
-            secure=False,
+            secure=os.getenv("COOKIE_SECURE", "").lower() == "true",
             samesite=False,
             max_age=60 * 60 * 24 * 7,
             expires=60 * 60 * 24 * 7,
@@ -61,7 +61,7 @@ def login(request):
             "access",
             str(access),
             httponly=True,
-            secure=False,
+            secure=os.getenv("COOKIE_SECURE", "").lower() == "true",
             samesite=False,
             max_age=5 * 60,
             expires=5 * 60,
@@ -98,7 +98,7 @@ def logout(request):
         "refresh",
         "",
         httponly=True,
-        secure=False,
+        secure=os.getenv("COOKIE_SECURE", "").lower() == "true",
         samesite=False,
         max_age=60 * 60 * 24 * 7,
         expires=60 * 60 * 24 * 7,
@@ -107,7 +107,7 @@ def logout(request):
         "access",
         "",
         httponly=True,
-        secure=False,
+        secure=os.getenv("COOKIE_SECURE", "").lower() == "true",
         samesite=False,
         max_age=5 * 60,
         expires=5 * 60,
@@ -134,7 +134,7 @@ def refresh_access_token(request):
             "access",
             str(new_access_token),
             httponly=True,
-            secure=False,
+            secure=os.getenv("COOKIE_SECURE", "").lower() == "true",
             samesite=False,
             max_age=5 * 60,
             expires=5 * 60,
