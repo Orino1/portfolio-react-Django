@@ -50,7 +50,6 @@ export async function fetchProjects() {
     }
 }
 
-
 export async function fetchSkills() {
     try {
         const response = await api.get("/skills/");
@@ -69,7 +68,6 @@ export async function fetchSkills() {
         return null;
     }
 }
-
 
 export async function login(loginInfo) {
     try {
@@ -92,7 +90,6 @@ export async function login(loginInfo) {
     }
 }
 
-
 export async function status() {
     try {
         const response = await privateApi.get("/auth/status/");
@@ -114,9 +111,9 @@ export async function status() {
 export async function logout() {
     try {
         const response = await privateApi.get("/auth/logout/");
-        setAdminStatus(false)
-        setMsg(response.data.msg)
-        return true
+        setAdminStatus(false);
+        setMsg(response.data.msg);
+        return true;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -131,13 +128,12 @@ export async function logout() {
         return null;
     }
 }
-
 
 export async function passChnage(newPass) {
     try {
         const response = await privateApi.patch("/auth/password/", newPass);
-        setMsg(response.data.msg)
-        return true
+        setMsg(response.data.msg);
+        return true;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -152,12 +148,11 @@ export async function passChnage(newPass) {
         return null;
     }
 }
-
 
 export async function createLanguage(language) {
     try {
         const response = await privateApi.post("/skills/language/", language);
-        return response.data
+        return response.data;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -172,12 +167,14 @@ export async function createLanguage(language) {
         return null;
     }
 }
-
 
 export async function createTechnology(technology) {
     try {
-        const response = await privateApi.post("/skills/technology/", technology);
-        return response.data
+        const response = await privateApi.post(
+            "/skills/technology/",
+            technology
+        );
+        return response.data;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -192,13 +189,12 @@ export async function createTechnology(technology) {
         return null;
     }
 }
-
 
 export async function deleteLanguage(langId) {
     try {
         const response = await privateApi.delete(`/skills/language/${langId}/`);
         setMsg(response.data.msg);
-        return true
+        return true;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -216,9 +212,11 @@ export async function deleteLanguage(langId) {
 
 export async function deleteTechnology(techId) {
     try {
-        const response = await privateApi.delete(`/skills/technology/${techId}/`);
+        const response = await privateApi.delete(
+            `/skills/technology/${techId}/`
+        );
         setMsg(response.data.msg);
-        return true
+        return true;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -233,12 +231,14 @@ export async function deleteTechnology(techId) {
         return null;
     }
 }
-
 
 export async function updateLanguage(langId, updatedLanguage) {
     try {
-        const response = await privateApi.patch(`/skills/language/${langId}/`, updatedLanguage);
-        return response.data
+        const response = await privateApi.patch(
+            `/skills/language/${langId}/`,
+            updatedLanguage
+        );
+        return response.data;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -253,13 +253,14 @@ export async function updateLanguage(langId, updatedLanguage) {
         return null;
     }
 }
-
-
 
 export async function updateTechnology(techId, updatedTech) {
     try {
-        const response = await privateApi.patch(`/skills/technology/${techId}/`, updatedTech);
-        return response.data
+        const response = await privateApi.patch(
+            `/skills/technology/${techId}/`,
+            updatedTech
+        );
+        return response.data;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -274,13 +275,12 @@ export async function updateTechnology(techId, updatedTech) {
         return null;
     }
 }
-
 
 export async function deleteProject(projectId) {
     try {
         const response = await privateApi.delete(`/projects/${projectId}/`);
         setMsg(response.data.msg);
-        return true
+        return true;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
@@ -296,11 +296,10 @@ export async function deleteProject(projectId) {
     }
 }
 
-
 export async function createProject(projectData) {
     try {
         const response = await privateApi.post("/projects/", projectData);
-        return response.data
+        return response.data;
     } catch (err) {
         if (err.response) {
             console.error("backend error:", err.response.data.msg);
