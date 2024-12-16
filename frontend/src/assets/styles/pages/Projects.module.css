@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.header > h1 {
+    font-weight: 500;
+}
+
+.btnsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.header button {
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4c04a6;
+    color: white;
+    cursor: pointer;
+}

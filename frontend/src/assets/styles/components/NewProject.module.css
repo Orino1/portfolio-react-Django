@@ -1,0 +1,76 @@
+.newProjectForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 5px;
+}
+
+.newProjectForm button,
+.newProjectForm input {
+    padding: 10px 10px;
+    font-size: 13px;
+}
+
+.newProjectForm button {
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease all;
+}
+
+.newProjectForm button:hover {
+    color: white;
+    background-color: rgb(110, 44, 171);
+}
+
+.newProjectForm .variant {
+    display: flex;
+    border: 1px solid rgb(0, 0, 0);
+    padding-left: 10px;
+    gap: 20px;
+}
+
+.newProjectForm .variant > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+.newProjectForm .variant > button {
+    width: 20px;
+    text-align: center;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    font-size: 25px;
+    border: none;
+    border-left: 1px solid black;
+    cursor: pointer;
+}
+
+.newProjectForm .variant > div > h4 {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.newProjectForm .languagesContainer {
+}
+
+.newProjectForm .languagesContainer > div {
+    display: inline-block;
+    width: fit-content;
+    font-size: 13px;
+    padding: 4px 14px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.newProjectForm .languagesContainer > div.selected {
+    color: white;
+    background-color: rgb(110, 44, 171);
+}

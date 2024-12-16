@@ -1,0 +1,59 @@
+.newTechnologyForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newTechnologyForm h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.newTechnologyForm input,
+.newTechnologyForm button {
+    max-width: 400px;
+    padding: 10px 10px;
+    font-size: 13px;
+}
+
+.newTechnologyForm button {
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease all;
+}
+
+.newTechnologyForm button:hover {
+    color: white;
+    background-color: rgb(110, 44, 171);
+}
+
+.newTechnologyForm .section {
+    display: flex;
+    max-width: 400px;
+    border: 1px solid black;
+}
+
+.newTechnologyForm .section button {
+    border: none;
+    border-left: 1px solid black;
+}
+
+.newTechnologyForm .section input {
+    flex: 1;
+}
+
+.newTechnologyForm .subSections {
+    max-width: 400px;
+    display: flex;
+}
+
+.newTechnologyForm .subSections > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.newTechnologyForm .subSections > div input {
+    flex: 1;
+}

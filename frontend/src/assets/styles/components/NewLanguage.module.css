@@ -1,0 +1,59 @@
+.newLanguageForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newLanguageForm h1 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.newLanguageForm input,
+.newLanguageForm button {
+    max-width: 400px;
+    padding: 10px 10px;
+    font-size: 13px;
+}
+
+.newLanguageForm button {
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease all;
+}
+
+.newLanguageForm button:hover {
+    color: white;
+    background-color: rgb(110, 44, 171);
+}
+
+.newLanguageForm .section {
+    display: flex;
+    max-width: 400px;
+    border: 1px solid black;
+}
+
+.newLanguageForm .section button {
+    border: none;
+    border-left: 1px solid black;
+}
+
+.newLanguageForm .section input {
+    flex: 1;
+}
+
+.newLanguageForm .subSections {
+    max-width: 400px;
+    display: flex;
+}
+
+.newLanguageForm .subSections > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.newLanguageForm .subSections > div input {
+    flex: 1;
+}
