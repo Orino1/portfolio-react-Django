@@ -1,5 +1,7 @@
 # Portfolio Project
 
+[Visit my Portfolio](https://orino.me)
+
 ## Overview
 
 The Portfolio Project is a full-stack web application designed for web developers to showcase their skills, projects. The application is structured with a Django backend that provides RESTful APIs and a React frontend for a dynamic user experience.
@@ -172,25 +174,24 @@ soon
     ```
     - Create a venv for python:
     ```bash
-    python -m venv myvenv
-    source myenv/bin/activate
+    python3 -m venv myvenv
+    source myvenv/bin/activate
     ```
     - Install the required Python dependencies using pip:
     ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
     - Configure the environment variables by copying the example.env file to .env and modifying the values as needed:
     ```bash
     cp example.env .env
-    source .env
     ```
     - Run the migrations to set up the database:
     ```bash
-    python3 manage.py migrate
+    python3 manage.py create_admin
     ```
     - Initiate the admin account ( username/password: root/root feel free to change them from `portfolio-react-Django/backend/admin_auth/management/commands/create_admin.py` ):
     ```bash
-    python3 create_admin.py
+    python3 manage.py create_admin
     ```
     - Start the devlopment server:
     ```bash
@@ -258,13 +259,13 @@ soon
     ```
     - Start application using Gunicorn:
     ```bash
-    gunicorn -b localhost:8114 backend.wsgi:appication
+    gunicorn -b localhost:8120 backend.wsgi:application
     ```
     - Configuring nginx to act as a reverse proxy for our flask appllication:
     ```
     server {
         location /api/ {
-			proxy_pass http://localhost:8114;
+			proxy_pass http://localhost:8120;
 			proxy_set_header Host $host;
 		}
     }
