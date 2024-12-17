@@ -187,6 +187,7 @@ soon
     ```
     - Run the migrations to set up the database:
     ```bash
+    python3 manage.py makemigrations
     python3 manage.py migrate
     ```
     - Initiate the admin account ( username/password: root/root feel free to change them from `portfolio-react-Django/backend/admin_auth/management/commands/create_admin.py` ):
