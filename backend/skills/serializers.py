@@ -53,17 +53,17 @@ class CreateLanguageSerializer(serializers.Serializer):
     )
     orms = serializers.ListField(
         child=serializers.CharField(min_length=1, max_length=50),
-        required=True,
+        required=False,
         allow_empty=True,
     )
     frameworks = serializers.ListField(
         child=serializers.CharField(min_length=1, max_length=50),
-        required=True,
+        required=False,
         allow_empty=True,
     )
     libs = serializers.ListField(
         child=serializers.CharField(min_length=1, max_length=50),
-        required=True,
+        required=False,
         allow_empty=True,
     )
 
