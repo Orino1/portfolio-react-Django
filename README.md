@@ -187,7 +187,7 @@ soon
     ```
     - Run the migrations to set up the database:
     ```bash
-    python3 manage.py create_admin
+    python3 manage.py migrate
     ```
     - Initiate the admin account ( username/password: root/root feel free to change them from `portfolio-react-Django/backend/admin_auth/management/commands/create_admin.py` ):
     ```bash
@@ -202,7 +202,7 @@ soon
 3. **Set Up the Frontend:**
     - Navigate to the `frontend/` folder:
     ```bash
-    cd portfolio-react-Django//frontend
+    cd portfolio-react-Django/frontend
     ```
     - Install the required Node.js dependencies:
     ```bash
