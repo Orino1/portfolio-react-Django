@@ -13,7 +13,7 @@ class Project(models.Model):
 
 
 class ProjectVariant(models.Model):
-    deployed_link = models.CharField(max_length=255)
+    deployed_link = models.CharField(max_length=255, null=False)
     repo_link = models.CharField(max_length=255, null=False)
 
     project = models.ForeignKey(
