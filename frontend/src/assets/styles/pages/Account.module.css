@@ -2,11 +2,15 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 20px;
 }
 
 .main h1 {
     font-weight: 500;
     font-size: 30px;
+    color: #e0e0e0;
 }
 
 .main form {
@@ -14,23 +18,39 @@
     flex-direction: column;
     max-width: 400px;
     gap: 20px;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
 }
 
 .main form button,
 .main form input {
     font-size: 14px;
-    padding: 10px 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #444;
+}
+
+.main form input {
+    background-color: #333;
+    color: #e0e0e0;
 }
 
 .main form button {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: #4c04a6;
+    color: white;
+    border: none;
     cursor: pointer;
-    transition: ease all 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .main form button:hover {
-    color: white;
-    background-color: #4c04a6;
+    background-color: #5a08e1;
+    color: #f0f0f0; 
+}
+
+.main form input:focus {
+    border-color: #5a67d8;
+    background-color: #444;
 }

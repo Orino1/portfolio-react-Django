@@ -3,31 +3,38 @@
     flex-direction: column;
     max-width: 400px;
     gap: 5px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    color: #e0e0e0;
 }
 
 .newProjectForm button,
 .newProjectForm input {
-    padding: 10px 10px;
+    padding: 10px;
     font-size: 13px;
+    border-radius: 5px;
 }
 
 .newProjectForm button {
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
     cursor: pointer;
     transition: 0.3s ease all;
 }
 
 .newProjectForm button:hover {
+    background-color: #6e2cab;
     color: white;
-    background-color: rgb(110, 44, 171);
 }
 
 .newProjectForm .variant {
     display: flex;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #444;
     padding-left: 10px;
     gap: 20px;
+    background-color: #333;
 }
 
 .newProjectForm .variant > div {
@@ -42,35 +49,44 @@
     width: 20px;
     text-align: center;
     padding: 0;
-    background-color: rgb(255, 255, 255);
-    color: rgb(10, 10, 10);
+    background-color: #444;
+    color: #e0e0e0;
     font-size: 25px;
     border: none;
-    border-left: 1px solid black;
+    border-left: 1px solid #444;
     cursor: pointer;
 }
 
 .newProjectForm .variant > div > h4 {
     font-size: 13px;
     font-weight: 300;
+    color: #e0e0e0;
 }
 
 .newProjectForm .languagesContainer {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .newProjectForm .languagesContainer > div {
     display: inline-block;
-    width: fit-content;
     font-size: 13px;
     padding: 4px 14px;
-    border: 1px solid black;
+    border: 1px solid #444;
     border-radius: 10px;
     cursor: pointer;
     margin-right: 5px;
     margin-bottom: 5px;
+    background-color: #444;
+    color: #e0e0e0;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .newProjectForm .languagesContainer > div.selected {
     color: white;
-    background-color: rgb(110, 44, 171);
+    background-color: #6e2cab;
+}
+
+.newProjectForm .languagesContainer > div:hover {
+    background-color: #5a4a8f;
 }

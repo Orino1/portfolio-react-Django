@@ -5,41 +5,44 @@
     width: 100vw;
     height: 100vh;
     padding-left: 200px;
+    background-color: #121212;
 }
 
 .sideBar {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 200px;
     height: 100%;
     overflow-y: auto;
-    box-shadow: 0px 0px 2px 2px rgba(127, 127, 127, 0.226);
-    transition: all ease 0.2s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
     z-index: 1;
-    background-color: white;
+    background-color: #1c1c1c;
 }
 
 .openBtn {
     position: fixed;
     left: 0;
     top: 0;
-    padding: 3px 5px;
-    font-size: 15px;
-    background-color: white;
-    border: 1px solid rgb(115, 115, 115);
+    padding: 8px 12px;
+    font-size: 18px;
+    background-color: #333;
+    border: none;
+    color: white;
     cursor: pointer;
     display: none;
+    border-radius: 5px;
 }
 
 .logo {
     display: block;
     text-decoration: none;
     text-align: center;
-    color: black;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 20px 0px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 0;
 }
 
 .elements {
@@ -50,19 +53,23 @@
     padding-left: 40px;
     text-align: start;
     cursor: pointer;
-    transition: all ease 0.2s;
-    background-color: rgb(255, 255, 255);
+    transition: all 0.2s ease;
+    color: #e0e0e0;
+    background-color: #2a2a2a;
     border: none;
-    border-bottom: 1px solid rgba(157, 157, 157, 0.424);
+    border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+    border-top: 1px solid rgba(80, 80, 80, 0.2);
 }
 
-.elements:nth-of-type(1) {
-    border-top: 1px solid rgba(157, 157, 157, 0.424);
+.elements:hover {
+    background-color: #3a3a3a;
 }
 
 .elements.selected {
     font-size: 16px;
     font-weight: 600;
+    background-color: #444;
+    color: #fff;
 }
 
 .logout {
@@ -71,10 +78,10 @@
     bottom: 0;
     font-size: 14px;
     letter-spacing: 1px;
-    background-color: #2f0563;
+    background-color: #d32f2f;
     color: white;
     border: none;
-    padding: 17px 10px;
+    padding: 16px 10px;
     width: 100%;
     cursor: pointer;
 }
@@ -84,6 +91,8 @@
     display: block;
     padding: 20px;
     overflow-y: auto;
+    background-color: #181818;
+    color: #e0e0e0;
 }
 
 @media (max-width: 617px) {
