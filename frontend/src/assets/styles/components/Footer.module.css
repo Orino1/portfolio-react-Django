@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all ease 0.2s;
 }
 
 .footer > div {
@@ -81,59 +82,54 @@
     color: #5e30b8;
 }
 
-.newsLetterForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.newsLetterForm fieldset {
-    position: relative;
-    background-color: rgb(243, 243, 243);
-    border: none;
-    border-radius: 10px;
-    padding: 15px 10px;
-    padding-bottom: 2px;
-    height: fit-content;
-    transition: all ease 0.2s;
-}
-
-.newsLetterForm fieldset legend {
-    color: gray;
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    transition: all ease 0.2s;
-}
-
-.newsLetterForm fieldset:focus-within {
-    background-color: rgb(237, 237, 237);
-}
-
-.newsLetterForm fieldset:focus-within legend,
-.newsLetterForm fieldset.active legend {
-    font-size: 13px;
-    top: 5px;
-}
-
-.newsLetterForm input {
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 17px;
-    padding: 5px 0px;
-}
-
-.newsLetterForm > button {
-    font-size: 13px;
-    padding: 15px 0px;
+.footer.darkmode {
+    background-color: #2b213b;
     color: white;
-    background-color: #4714af;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: ease all 0.2s;
 }
+
+.footer.darkmode .legalLinks {
+    color: white;
+}
+
+.footer.darkmode > div > section:nth-child(1) {
+    border-bottom: 1px solid #444;
+}
+
+.footer.darkmode > div > section:nth-child(1) > div h4,
+.footer.darkmode > div > section:nth-child(1) > div > div h4 {
+    color: #ccc;
+}
+
+.footer.darkmode > div > section:nth-child(1) .firstSub a {
+    border: 1px solid #ccc;
+}
+
+.footer.darkmode > div > section:nth-child(1) .firstSub a i {
+    color: #ccc;
+}
+
+.footer.neutral {
+    background-color: #e6e0f3;
+    color: #4c4c4c;
+}
+
+.footer.neutral > div > section:nth-child(1) {
+    border-bottom: 1px solid #b3b38f;
+}
+
+.footer.neutral > div > section:nth-child(1) > div h4,
+.footer.neutral > div > section:nth-child(1) > div > div h4 {
+    color: #5a5a5a;
+}
+
+.footer.neutral > div > section:nth-child(1) .firstSub a {
+    border: 1px solid #5a5a5a;
+}
+
+.footer.neutral > div > section:nth-child(1) .firstSub a i {
+    color: #5a5a5a;
+}
+
 
 @media (max-width: 834px) {
     .footer > div > section:nth-of-type(1) {

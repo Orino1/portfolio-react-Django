@@ -128,3 +128,70 @@
 .variants > div:nth-of-type(2) a:hover {
     color: #2b6cb0;
 }
+
+
+.darkmode.project {
+    background-color: #2a2a2a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.darkmode.project i:nth-of-type(1), .project i:nth-of-type(2) {
+    color: #fff;
+}
+
+.darkmode.project:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.darkmode.project h2, .project h3 {
+    color: #e0e0e0;
+}
+
+.darkmode.project p {
+    color: #bbb;
+}
+
+.darkmode.project hr {
+    border-top: 1px solid #444;
+}
+
+.darkmode.project .variants > div:nth-of-type(1) {
+    border-right: 1px solid #444;
+}
+
+.darkmode.project .variants > div:nth-of-type(1) span {
+    color: #bbb;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.darkmode.project .variants > div:nth-of-type(1) span:hover {
+    background-color: #333;
+}
+
+.darkmode.project .variants > div:nth-of-type(1) span.selected {
+    background-color: #5a67d8;
+    color: white;
+}
+
+.darkmode.project .variants > div:nth-of-type(2) div span {
+    border: 1px solid #444;
+    color: #e0e0e0;
+    background-color: #333;
+}
+
+.darkmode.project .variants > div:nth-of-type(2) div span:hover {
+    background-color: #444;
+    border-color: #666;
+}
+
+.darkmode.project .variants > div:nth-of-type(2) p {
+    color: #bbb;
+}
+
+.darkmode.project .variants > div:nth-of-type(2) a {
+    color: #3182ce;
+}
+
+.darkmode.project .variants > div:nth-of-type(2) a:hover {
+    color: #2b6cb0;
+}

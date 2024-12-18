@@ -8,37 +8,46 @@ import Login from "./pages/admin/Login";
 import GlobalMsg from "./components/GlobalMsg";
 import AdminStatusContextProvider from "./contexts/AdminStatusContext";
 import Dashboard from "./pages/admin/Dashboard";
+import ColorThemeContextProvider from "./contexts/ColorThemeContext";
 
 function App() {
     return (
-        <Router>
-            <ScrollTop />
-            <AdminStatusContextProvider>
-                <GlobalMsgProvider>
-                    <GlobalMsg />
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <MainLayout>
-                                    <Home />
-                                </MainLayout>
-                            }
-                        ></Route>
-                        <Route
-                            path="/contact"
-                            element={
-                                <MainLayout>
-                                    <Contact />
-                                </MainLayout>
-                            }
-                        ></Route>
-                        <Route path="/admin" element={<Dashboard />}></Route>
-                        <Route path="/admin/login" element={<Login />}></Route>
-                    </Routes>
-                </GlobalMsgProvider>
-            </AdminStatusContextProvider>
-        </Router>
+        <ColorThemeContextProvider>
+            <Router>
+                <ScrollTop />
+                <AdminStatusContextProvider>
+                    <GlobalMsgProvider>
+                        <GlobalMsg />
+                        <Routes>
+                            <Route
+                                path="/"
+                                element={
+                                    <MainLayout>
+                                        <Home />
+                                    </MainLayout>
+                                }
+                            ></Route>
+                            <Route
+                                path="/contact"
+                                element={
+                                    <MainLayout>
+                                        <Contact />
+                                    </MainLayout>
+                                }
+                            ></Route>
+                            <Route
+                                path="/admin"
+                                element={<Dashboard />}
+                            ></Route>
+                            <Route
+                                path="/admin/login"
+                                element={<Login />}
+                            ></Route>
+                        </Routes>
+                    </GlobalMsgProvider>
+                </AdminStatusContextProvider>
+            </Router>
+        </ColorThemeContextProvider>
     );
 }
 

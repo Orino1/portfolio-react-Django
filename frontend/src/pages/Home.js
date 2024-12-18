@@ -6,10 +6,13 @@ import { fetchProjects, fetchSkills } from "../apiService";
 import ProjectCard from "../components/ProjectCard";
 import LanguageCard from "../components/LanguageCard";
 import TechnologyCard from "../components/TechnologyCard";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function Home() {
     const [projects, setProjects] = useState([]);
     const [skills, setSkills] = useState(null);
+    const { color } = useColorContext();
+
     const realName = process.env.REACT_APP_REALNAME;
 
     useEffect(() => {
@@ -33,7 +36,7 @@ function Home() {
     }, []);
 
     return (
-        <>
+        <div className={color === "middle" ? styles.neutral : color === "end" ? styles.darkmode : ""}>
             <Helmet>
                 <title>Home</title>
             </Helmet>
@@ -43,7 +46,7 @@ function Home() {
                 <section>
                     <div>
                         <div>
-                            <p>{realName}</p>
+                            <p className={styles.name}>{realName}</p>
                             <h1>
                                 Building Solutions, for Your Needs
                                 <span>.</span>
@@ -136,7 +139,7 @@ function Home() {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }
 

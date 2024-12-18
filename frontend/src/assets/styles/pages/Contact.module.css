@@ -69,6 +69,78 @@
     color: rgb(60, 164, 255);
 }
 
+.neutral .container {
+    padding-top: 150px;
+}
+
+.neutral .header > div h1 {
+    color: #3b3936;
+}
+
+.neutral .header > div p {
+    color: #5c5a54;
+}
+
+.neutral .header > div a {
+    background-color: #a98b60;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.neutral .content {
+    background-color: #eae7dc;
+}
+
+.neutral .subContent > div {
+    color: #3b3936;
+}
+
+.neutral .subContent > div h3 {
+    color: #5c5a54;
+}
+
+.neutral .subContent > div a {
+    color: #a98b60;
+}
+
+.darkmode {
+    background-color: #1e1e2f;
+}
+
+.darkmode .container {
+    padding-top: 150px;
+}
+
+.darkmode .header > div h1 {
+    color: #ffffff;
+}
+
+.darkmode .header > div p {
+    color: #d1d1d1;
+}
+
+.darkmode .header > div a {
+    background-color: #8246cf;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.darkmode .content {
+    background-color: #1e1e2f;
+}
+
+.darkmode .subContent > div {
+    color: #ffffff;
+}
+
+.darkmode .subContent > div h3 {
+    color: #f0f0f0;
+}
+
+.darkmode .subContent > div a {
+    color: #628ee3;
+}
+
 @media (max-width: 428px) {
     .subContent > div {
         width: fit-content;

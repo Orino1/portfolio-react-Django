@@ -1,11 +1,14 @@
 import styles from "../assets/styles/components/NavBar.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function NavBar() {
     const [openMenu, setOpenMenu] = useState(false);
-    const [togglePosition, setTogglePosition] = useState("start");
+    const { color, setColor } = useColorContext();
+    const [togglePosition, setTogglePosition] = useState(color);
     const [isFixed, setIsFixed] = useState(false);
+
     const name = process.env.REACT_APP_NAME;
 
     const handleToggle = () => {
@@ -14,6 +17,7 @@ function NavBar() {
         const nextIndex =
             currentIndex >= positions.length - 1 ? 0 : currentIndex + 1;
         setTogglePosition(positions[nextIndex]);
+        setColor(positions[nextIndex]);
     };
 
     useEffect(() => {
@@ -29,7 +33,7 @@ function NavBar() {
     }, []);
 
     return (
-        <nav className={`${styles.nav} ${isFixed && styles.fixed} `}>
+        <nav className={`${styles.nav} ${isFixed && styles.fixed} ${color === "middle" ? styles.neutral : color === "end" ? styles.darkmode : ""}`}>
             <section>
                 <button
                     onClick={() => setOpenMenu((prev) => !prev)}

@@ -1,13 +1,16 @@
 import "../assets/styles/style.css";
 import styles from "../assets/styles/pages/Contact.module.css";
 import { Helmet } from "react-helmet";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function Contact() {
+    const { color } = useColorContext();
+
     const email = process.env.REACT_APP_EMAIL;
     const phone = process.env.REACT_APP_PHONE;
 
     return (
-        <>
+        <div className={color === "middle" ? styles.neutral : color === "end" ? styles.darkmode : ""}>
             <Helmet>
                 <title>Contact</title>
             </Helmet>
@@ -41,7 +44,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

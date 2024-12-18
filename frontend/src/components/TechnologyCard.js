@@ -1,8 +1,15 @@
 import styles from "../assets/styles/components/TechnologyCard.module.css";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function TechnologyCard({ tech }) {
+    const { color } = useColorContext();
+
     return (
-        <div className={styles.container}>
+        <div
+            className={`${styles.container} ${
+                color === "end" ? styles.darkmode : ""
+            }`}
+        >
             <h2>
                 <i className="fa-solid fa-server"></i> {tech.name}
             </h2>

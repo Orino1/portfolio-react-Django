@@ -1,20 +1,24 @@
 import styles from "../assets/styles/components/ProjectCard.module.css";
 import { useState } from "react";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 export default function ProjectCard({ project }) {
     const [selectedStack, setSelectedStack] = useState(project.variants[0]);
+    const { color } = useColorContext();
 
     const handleStackSelection = (variant) => {
         setSelectedStack(variant);
     };
 
     return (
-        <div className={styles.project}>
+        <div
+            className={`${styles.project} ${
+                color === "end" ? styles.darkmode : ""
+            }`}
+        >
             <h2>{project.name}</h2>
             <h3>{project.description}</h3>
-            <p>
-                The problem we're solving: {project.problem_statement}
-            </p>
+            <p>The problem we're solving: {project.problem_statement}</p>
             <p>The solution offered by this project: {project.solution}</p>
             <hr></hr>
             <div className={styles.variants}>
@@ -27,7 +31,9 @@ export default function ProjectCard({ project }) {
                             onClick={() => handleStackSelection(vr)}
                             key={vr.id}
                         >
-                            {vr.languages.map((lang) => lang.language.name).join(", ")}
+                            {vr.languages
+                                .map((lang) => lang.language.name)
+                                .join(", ")}
                         </span>
                     ))}
                 </div>
@@ -54,16 +60,26 @@ export default function ProjectCard({ project }) {
                     </div>
                     <p>
                         Github:{" "}
-                        <a rel="noreferrer" target="_blank" href={selectedStack.repo_link}>
+                        <a
+                            rel="noreferrer"
+                            target="_blank"
+                            href={selectedStack.repo_link}
+                        >
                             {selectedStack.repo_link}
                         </a>
                     </p>
-                    {selectedStack.deployed_link && <p>
-                        Deployed at:{" "}
-                        <a rel="noreferrer" target="_blank" href={selectedStack.deployed_link}>
-                            {selectedStack.deployed_link}
-                        </a>
-                    </p>}
+                    {selectedStack.deployed_link && (
+                        <p>
+                            Deployed at:{" "}
+                            <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href={selectedStack.deployed_link}
+                            >
+                                {selectedStack.deployed_link}
+                            </a>
+                        </p>
+                    )}
                 </div>
             </div>
         </div>

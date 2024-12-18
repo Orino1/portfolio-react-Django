@@ -1,15 +1,17 @@
-import React from "react";
 import styles from "../assets/styles/components/Footer.module.css";
 import { Link } from "react-router-dom";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function Footer() {
+    const { color } = useColorContext();
+
     const name = process.env.REACT_APP_NAME;
     const email = process.env.REACT_APP_EMAIL;
     const phone = process.env.REACT_APP_PHONE;
     const location = process.env.REACT_APP_LOCATION;
 
     return (
-        <footer className={styles.footer}>
+        <footer className={`${styles.footer} ${color === "middle" ? styles.neutral : color === "end" ? styles.darkmode : ""}`}>
             <div>
                 <section>
                     <div>
@@ -49,8 +51,8 @@ function Footer() {
                 <section>
                     <div>© 2024, {name}. Made with passion</div>
                     <div>
-                        <Link>Privacy & Cookie Policy </Link>|
-                        <Link> Terms of Service</Link>
+                        <Link className={styles.legalLinks}>Privacy & Cookie Policy </Link>|
+                        <Link className={styles.legalLinks}> Terms of Service</Link>
                     </div>
                 </section>
             </div>

@@ -1,8 +1,15 @@
 import styles from "../assets/styles/components/LanguageCard.module.css";
+import { useColorContext } from "../contexts/ColorThemeContext";
 
 function LanguageCard({ language }) {
+    const { color } = useColorContext();
+
     return (
-        <div className={styles.container}>
+        <div
+            className={`${styles.container} ${
+                color === "end" ? styles.darkmode : ""
+            }`}
+        >
             <h2>
                 <i class="fa-solid fa-code"></i> {language.name}
             </h2>

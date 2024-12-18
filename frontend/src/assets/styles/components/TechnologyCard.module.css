@@ -17,7 +17,6 @@
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-
 .container > i:nth-of-type(1) {
     position: absolute;
     top: 2px;
@@ -56,4 +55,41 @@
 .section p {
     color: gray;
     font-size: 15px;
+}
+
+.darkmode.container {
+    background-color: #2a2a2a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.darkmode.container:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.darkmode.container > i:nth-of-type(1) {
+    color: #fff;
+}
+
+.darkmode.container > i:nth-of-type(2) {
+    color: #fff;
+}
+
+.darkmode.container h2 {
+    color: #e0e0e0;
+}
+
+.darkmode.container hr {
+    border-top: 1px solid #444;
+}
+
+.darkmode.container h3 {
+    color: #e0e0e0;
+}
+
+.darkmode.container .section p {
+    color: #bbb;
+}
+
+.darkmode.container:hover .section p {
+    color: #fff;
 }
